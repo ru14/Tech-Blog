@@ -2,96 +2,124 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech-Blog</title>
-    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech-Blog</title>
+  <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <header>
-        <h1>TECH BLOG</h1>
-        <nav>
-            <div class="topnav" id="myTopnav">
-                <a href="#home" class="active">Home</a>
-                <a href="#dashboard">Dashboard</a>
-                <a href="#login">Login</a>
-                <a href="#logout">Logout</a>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
-                </a>
+  <header>
+    <h1>TECH BLOG</h1>
+    <nav>
+      <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#login">Login</a>
+        <a href="#logout">Logout</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">Login card
+          <form action="/action_page.php" method="post">
+            <div class="imgcontainer">
+              <img src="img_avatar2.png" alt="Avatar" class="avatar">
             </div>
-        </nav>
-    </header>
-    <main>
-        <div class="container">
-            <div class="card">
-                <div class="card-body">Login card</div>
-                <form action="/action_page.php" method="post">
-                    <div class="imgcontainer">
-                      <img src="img_avatar2.png" alt="Avatar" class="avatar">
-                    </div>
-                  
-                    <div class="container">
-                      <label for="uname"><b>Username</b></label>
-                      <input type="text" placeholder="Enter Username" name="uname" required>
-                  
-                      <label for="psw"><b>Password</b></label>
-                      <input type="password" placeholder="Enter Password" name="psw" required>
-                          
-                      <button type="submit">Login</button>
-                      <label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                      </label>
-                    </div>
-                  
-                    <div class="container" style="background-color:#f1f1f1">
-                      <button type="button" class="cancelbtn">Cancel</button>
-                      <span class="psw">Forgot <a href="#">password?</a></span>
-                    </div>
-                  </form>
-              </div>
-              <div class="card">
-                <div class="card-body">Existing blog posts</div>
-                <form>
-                  <p class="solid">posted blogs.</p>
-                   <p class="solid">posted blogs.</p>
-                </form>
-               
-              </div>
-              <div class="card">
-                <div class="card-body">Basic card</div>
-                <p class="solid">A solid border.</p>
-              </div>
-              <div class="card">
-                <div class="card-body">Basic card</div>
-                <p class="solid">A solid border.</p>
-              </div>
-              <div class="card">
-                <div class="card-body">Basic card</div>
-                <p class="solid">A solid border.</p>
-              </div>
-              <div class="card">
-                <div class="card-body">Basic card</div>
-                <p class="solid">A solid border.</p>
-              </div>
+
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
+
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+
+              <button type="submit">Login</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">Existing blog posts
+          <form>
+            <p class="solid">posted blogs.</p>
+            <p class="solid">posted blogs.</p>
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">Edit Post
+          <form action="/action_page.php" method="post">
+            <div class="container">
+              <label for="title"><b>Title</b></label>
+              <input type="text" placeholder="Enter Title" name="title" required>
+
+              <label for="content"><b>Content</b></label>
+              <input type="content" placeholder="Enter Content" name="content" required>
+
+              <button type="submit">Update Post</button>
+              <button type="submit">Delete</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">Create New Post
+          <form action="/action_page.php" method="post">
+            <div class="container">
+              <label for="title"><b>Title</b></label>
+              <input type="text" placeholder="Enter Title" name="title" required>
+
+              <label for="content"><b>Content</b></label>
+              <input type="content" placeholder="Enter Content" name="content" required>
+
+              <button type="submit">Create</button>
+            </div>
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" class="nwptbtn">+ New Post</button>
               
             </div>
-        
-    </main>
+        </div>
+        </form>
+      </div>
+      <div class="card">
+        <div class="card-body">Basic card</div>
+        <p class="solid">A solid border.</p>
+      </div>
+      <div class="card">
+        <div class="card-body">Basic card</div>
+        <p class="solid">A solid border.</p>
+      </div>
+
+    </div>
+
+  </main>
 
 </body>
 <script>
-    function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav";
-        }
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
     }
+  }
 </script>
 
 </html>

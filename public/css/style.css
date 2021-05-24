@@ -47,7 +47,14 @@ input[type=text], input[type=password] {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-
+input[type=text], input[type=content] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 button {
   background-color: #04AA6D;
   color: white;
@@ -62,11 +69,12 @@ button:hover {
   opacity: 0.8;
 }
 
-.cancelbtn {
+.cancelbtn, .nwptbtn{
   width: auto;
   padding: 10px 18px;
   background-color: #f44336;
 }
+
 
 .imgcontainer {
   text-align: center;
@@ -93,7 +101,7 @@ span.psw {
      display: block;
      float: none;
   }
-  .cancelbtn {
+  .cancelbtn, .nwptbtn{
      width: 100%;
   }
 }
