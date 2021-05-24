@@ -5,12 +5,22 @@ body {
 p.solid {border-style: solid;
 margin: 25px;}
 
-.topnav {
+.topnav, .card-body {
   overflow: hidden;
   background-color: #333;
 }
-
-.topnav a {
+.card-body{
+  color: #f2f2f2;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  }
+.card{
+  margin: 25px;
+}
+.topnav a{
   float: left;
   display: block;
   color: #f2f2f2;
@@ -34,7 +44,8 @@ margin: 25px;}
   display: none;
 }
 
-container {border-style:3px solid #131212;}
+.container {border-style:3px solid #131212;}
+
 
 body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #131212;}
