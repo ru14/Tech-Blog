@@ -42,6 +42,7 @@
             <input type="password" placeholder="Enter Password" name="psw" required>
 
             <button type="submit">Login</button>
+
             <label>
               <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
@@ -49,7 +50,8 @@
 
           <div class="container" style="background-color:#f1f1f1">
             <button type="button" class="cancelbtn">Cancel</button>
-            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+            <button onclick="document.getElementById('id01').style.display='block'"
+              style="width:auto; padding: 10px 18px;">Sign Up</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
           </div>
         </form>
@@ -99,10 +101,8 @@
         </form>
       </div>
       <div class="card">
-        <div class="card-body">Sign up</div>
         <div id="id01" class="modal">
-          <span onclick="document.getElementById('id01').style.display='none'" class="close"
-            title="Close Modal">&times;</span>
+          <div class="card-body">Sign up</div>
           <form action="/action_page.php" method="post">
             <div class="container">
               <h1>Sign Up</h1>
@@ -113,28 +113,33 @@
 
               <label for="psw"><b>Password</b></label>
               <input type="password" placeholder="Enter Password" name="psw" required>
-              
+
               <label for="psw-repeat"><b>Repeat Password</b></label>
               <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
-              <button type="submit">Login</button>
               <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
               </label>
             </div>
 
-            <div class="container" style="background-color:#f1f1f1">
-              <button type="button" class="cancelbtn">Cancel</button>
-              <span class="psw">Forgot <a href="#">password?</a></span>
+            <div class="clearfix">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                class="cancelbtn1">Cancel</button>
+              <button type="submit" class="signupbtn1">Sign Up</button>
             </div>
           </form>
         </div>
-        <div class="card">
-          <div class="card-body">Basic card</div>
-          <p class="solid">A solid border.</p>
-        </div>
 
       </div>
+
+      <div class="card">
+        <div class="card-body">Basic card</div>
+        <p class="solid">A solid border.</p>
+      </div>
+    </div>
+
+
+    </div>
 
   </main>
 
