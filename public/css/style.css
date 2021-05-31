@@ -5,6 +5,10 @@ body {
 p.solid {border-style: solid;
 margin: 25px;}
 
+form {border: 3px solid #131212;}
+
+.container {border-style:3px solid #131212;}
+
 .topnav, .card-body {
   overflow: hidden;
   background-color: #333;
@@ -19,6 +23,7 @@ margin: 25px;}
   }
 .card{
   margin: 25px;
+  border-style: solid;
 }
 .topnav a{
   float: left;
@@ -44,11 +49,32 @@ margin: 25px;}
   display: none;
 }
 
-.container {border-style:3px solid #131212;}
+.blog-card{
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 25px 60px 25px 60px;
+  overflow: auto;
+}
 
+.blog-header{
+background-color: lightslategray;
+color: white;
+padding: 10px;
+border-radius: 5px;
 
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #131212;}
+}
+
+.blog-card-bdy{
+  padding: 12px 20px;
+ 
+}
+
+.blog-by{
+float: right;
+background-color: lightslategray;
+color: white;
+border-radius: 5px;
+}
 
 input[type=text], input[type=password] {
   width: 100%;

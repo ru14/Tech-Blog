@@ -1,8 +1,19 @@
 <div class="card">
-        <div class="card-body">Existing blog posts</div>
-        <form>
-          <p class="solid">posted blogs.</p>
-          <p class="solid">posted blogs.</p>
-        </form>
-
+  <div class="card-body">Existing blog posts</div>
+  <div class="blog-card">
+    {{#each blogs as |blog|}}
+    <div class="blog-header">
+      {{blog.blog_header}}
+    </div>
+    <div class="blog-card-bdy">
+      <p>
+        {{bolg.discription}}
+      </p>
+      <div class="blog-by">
+        {{blog.bloger_name}}
+        date: 20/12/2021
       </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
