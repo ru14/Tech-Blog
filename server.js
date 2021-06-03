@@ -3,7 +3,7 @@ const session = require('express-session');
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
 const path = require('path');
-//const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers');
 
 
 const sequelize = require('./config/connection');
@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({});
+const hbs = exphbs.create({ helpers });
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);// handlebar work
 app.set('view engine', 'handlebars');// set value 
