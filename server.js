@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers });// to use helper folder for time and auth
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);// handlebar work
 app.set('view engine', 'handlebars');// set value 
