@@ -44,7 +44,7 @@ router.get('/', async (req, res) => {
     });
   // res.render('blog',{ blogs: blogs });// name of handlebar view
 });
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
   blog.findOne({
     where: {
       id: req.params.id
@@ -84,7 +84,7 @@ router.get('/', async (req, res) => {
     });
   // res.render('blog',{ blogs: blogs });// name of handlebar view
 });
-//update--put
+
 router.put('/:id', withAuth, (req, res) => {
   Post.update({
     blog_header: req.body.blog_header,
