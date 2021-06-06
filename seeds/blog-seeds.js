@@ -23,7 +23,7 @@ const blogs = [
         user_id: 3
     },
     {
-      bloger_name: 'Tim',
+      name: 'Tim',
       blog_header: 'Food',
       description: 'Guava, papaya, pineapple, mango, and star fruit',
       user_id: 4
