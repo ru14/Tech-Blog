@@ -1,14 +1,14 @@
 const sequelize = require('../config/connection');
-const { blog, User, Comment } = require('../models');
+const { Blog, User, Comment } = require('../models');
 const router = require('express').Router();
 
 //all of post user is not logged in
 router.get('/', async (req, res) => {
-  blog.findAll({
+  Blog.findAll({
 
     attributes: [
       'id',
-      'bloger_name',
+      
       'blog_header',
       'description',
       'cerated_at'
@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
     ]
   })
     .then(dbblogData => {
-      const blogs = dbblogData.map(blog => blog.get({ plain: true }));
+      const blogs = dbblogData.map(Blog => Blog.get({ plain: true }));
       res.render('homepage', { blogs, loggedIn: req.session.loggedIn });
     })
     .catch(err => {
@@ -57,14 +57,14 @@ router.get('/signup', (req, res) => {
 });
 
 //get single post
-router.get('/blog/:id', async (req, res) => {
-  blog.findOne({
+router.get('/Blog/:id', async (req, res) => {
+  Blog.findOne({
     where: {
       id: req.params.id
     },
     attributes: [
       'id',
-      'bloger_name',
+      
       'blog_header',
       'description',
       'cerated_at'

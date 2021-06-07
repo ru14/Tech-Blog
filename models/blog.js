@@ -6,24 +6,29 @@ class Blog extends Model { }
 
 Blog.init(
   {
-   
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
     blog_header: {
       type: DataTypes.STRING,
       allowNull: false
     },
-      description: {
-        type: DataTypes.TEXT,
-        allowNull: false
-      },
-      user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'user',
-          key: 'id'
-        }
-      }
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false
     },
-        {
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    }
+  },
+  {
     sequelize,
     freezeTableName: true,
     underscored: true,
