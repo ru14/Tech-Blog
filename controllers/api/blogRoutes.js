@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
       'bloger_name',
       'blog_header',
       'description',
-      'cerated_at'
+      'created_at'
     ],
     order: [
       ['created_at',
@@ -54,7 +54,7 @@ router.get('/:id', async (req, res) => {
       'bloger_name',
       'blog_header',
       'description',
-      'cerated_at'
+      'created_at'
     ],
     include: [
       {

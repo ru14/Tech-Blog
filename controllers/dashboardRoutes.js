@@ -16,7 +16,7 @@ const { route } = require('./api/blogRoutes');
 //             'bloger_name',
 //             'blog_header',
 //             'description',
-//             'cerated_at'
+//             'created_at'
 //         ],
 //         include: [
 //             {

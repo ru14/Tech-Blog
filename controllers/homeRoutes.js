@@ -8,10 +8,9 @@ router.get('/', async (req, res) => {
 
     attributes: [
       'id',
-      
       'blog_header',
       'description',
-      'cerated_at'
+      'created_at'
     ],
     include: [
       {
@@ -57,17 +56,16 @@ router.get('/signup', (req, res) => {
 });
 
 //get single post
-router.get('/Blog/:id', async (req, res) => {
+router.get('/postblog/:id', async (req, res) => {
   Blog.findOne({
     where: {
       id: req.params.id
     },
     attributes: [
       'id',
-      
       'blog_header',
       'description',
-      'cerated_at'
+      'created_at'
     ],
     include: [
       {
