@@ -17,9 +17,13 @@
       <div class="topnav" id="myTopnav">
         <a class="link" href="/">Home</a>
         <a class="link" href="/dashboard">Dashboard</a>
-        <a class="link" href="/login">Login</a>
+        {{#if loggedIn}}
         <a class="link" href="/" id="logout">Logout</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        {{else}}
+        <a class="link" href="/login">Login</a>
+         <a href="javascript:void(0);" class="icon" onclick="myFunction()"></a>
+        {{/if}}
+       
           <i class="fa fa-bars"></i>
         </a>
       </div>
@@ -28,6 +32,8 @@
   <main>
     {{{ body }}}
   </main>
-   <script src="/js/script.js"></script>
+  {{!-- <script src="/js/script.js"></script> --}}
+  <script src="/js/logout.js"
 </body>
+
 </html>

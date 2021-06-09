@@ -1,17 +1,18 @@
 <div class="card">
-        <div class="card-body">Edit Post</div>
-        <form action="/action_page.php" method="post">
-          <div class="container">
-            <label for="title"><b>Title</b></label>
-            <input type="text" placeholder="Enter Title" name="title" required>
+  <div class="card-body">Edit Post</div>
+  <form class="card-body edit-post-form">
+    <div class="container">
+      <label for="title"><b>Title</b></label>
+      <input type="text" value="{{blog.blog_header}}" placeholder="Enter Title" name="title" required>
 
-            <label for="content"><b>Content</b></label>
-            <input type="content" placeholder="Enter Content" name="content" required>
+      <label for="content"><b>Content</b></label>
+      <input type="content" value="{{blog.discription}}" placeholder="Enter Content" name="content" required>
 
-            <button type="submit">Update Post</button>
-            <button type="submit">Delete</button>
-          </div>
-        </form>
+      <button type="submit">Update Post</button>
+      <button type="submit">Delete</button>
+    </div>
+  </form>
 
-      </div>
-      
+</div>
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
