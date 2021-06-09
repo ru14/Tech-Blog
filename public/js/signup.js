@@ -13,7 +13,8 @@ const signupFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        console.log("sucessfull ")
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }
