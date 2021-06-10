@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { blog, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
-const { route } = require('./api/blogRoutes');
+
 
 
 //all of post with user logged in

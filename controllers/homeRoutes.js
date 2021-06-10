@@ -56,7 +56,7 @@ router.get('/signup', (req, res) => {
 });
 
 //get single post
-router.get('/postblog/:id', async (req, res) => {
+router.get('/blog/:id', async (req, res) => {
   Blog.findOne({
     where: {
       id: req.params.id
