@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   blog.findAll({
     attributes: [
       'id',
-      'bloger_name',
+      
       'blog_header',
       'description',
       'created_at'
@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     include: [
       {
         model: User,
-        attributes: ['name']
+        attributes: ['username']
       },
       {
         model: Comment,
@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
           'created_at'],
         include: {
           model: User,
-          attributes: ['name']
+          attributes: ['username']
         }
       }
     ]
@@ -42,7 +42,7 @@ router.get('/', async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-  // res.render('blog',{ blogs: blogs });// name of handlebar view
+  // res.render('blog',{ blogs: blogs });// username of handlebar view
 });
 router.get('/:id', async (req, res) => {
   blog.findOne({
@@ -51,7 +51,7 @@ router.get('/:id', async (req, res) => {
     },
     attributes: [
       'id',
-      'bloger_name',
+      
       'blog_header',
       'description',
       'created_at'
@@ -59,7 +59,7 @@ router.get('/:id', async (req, res) => {
     include: [
       {
         model: User,
-        attributes: ['name']
+        attributes: ['username']
       },
       {
         model: Comment,
@@ -72,7 +72,7 @@ router.get('/:id', async (req, res) => {
         ],
         include: {
           model: User,
-          attributes: ['name']
+          attributes: ['username']
         }
       }
     ]
@@ -82,7 +82,7 @@ router.get('/:id', async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-  // res.render('blog',{ blogs: blogs });// name of handlebar view
+  // res.render('blog',{ blogs: blogs });// username of handlebar view
 });
 
 router.put('/:id', withAuth, (req, res) => {
@@ -110,7 +110,7 @@ router.put('/:id', withAuth, (req, res) => {
 
 router.post('/:id', withAuth, (req, res) => {
   Post.create({
-    bloger_name: req.session.bloger_name,
+   
     blog_header: req.body.title,
     description: req.body.content,
     user_id: req.session.user_id
