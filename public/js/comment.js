@@ -1,8 +1,9 @@
-async function newFormHandler(event) {
+async function commentFormHandler(event) {
     event.preventDefault();
   
     const comment_text = document.querySelector('input[name="comment-body"]').value.trim();
-    
+    const blog_id = document.querySelector('#comment-form').getAttribute('data-blog_id');
+    console.log(comment_text)
     
   
     

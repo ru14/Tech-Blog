@@ -1,21 +1,8 @@
-<div class="card">
-  <div class="card-body">Existing blog posts</div>
-  <div class="blog-card">
-    {{#each blogs as |blog|}}
-    <div class="blog-header">
-      {{blog.blog_header}}
-    </div>
-    <div class="blog-card-bdy">
-      <p>
-        {{bolg.discription}}
-      </p>
-      <div class="blog-by">
-        {{blog.name}}
-        {{!-- date: 20/12/2021 --}}
-        {{format_date created_at}}
-      </div>
-    </div>
-  </div>
-  {{/each}}
-</div>
-<script src="/js/script.js"></script>
+
+<article class="blog">
+
+    {{#each blogs as |blog| }}
+        {{> blog-info blog}}
+    {{/each}}
+
+</article>

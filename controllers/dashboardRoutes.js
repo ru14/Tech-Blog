@@ -10,7 +10,7 @@ console.log("hit the page",Blog);
 
 
 router.get('/', async (req, res) => {
-    
+    console.log(req.session)
     Blog.findAll({
         where: {
             user_id: req.session.user_id
@@ -43,6 +43,7 @@ router.get('/', async (req, res) => {
     })
         .then(dbblogData => {
             const blogs = dbblogData.map(blog => blog.get({ plain: true }));
+            console.log(blogs)
             res.render('dashboard', { blogs, loggedIn: true });
         })
         .catch(err => {

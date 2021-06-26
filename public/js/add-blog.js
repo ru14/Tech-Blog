@@ -1,8 +1,8 @@
 async function newFormHandler(event) {
     event.preventDefault();
   
-    const blog_header = document.querySelector('input[name="blog_header"]').value;
-    const description = document.querySelector('input[name="decription"]').value;
+    const blog_header = document.querySelector('#blog_header').value;
+    const description = document.querySelector('#description').value;
     
   
     
