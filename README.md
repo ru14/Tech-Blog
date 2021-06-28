@@ -28,7 +28,7 @@ Start Server;
 
 * Deployed App: <a href="https://agile-bastion-80180.herokuapp.com">Heroku</a>    
 
-![Screenshot](doc/proof.png?raw=true "Proof of Application")  
+
 
 * the URL to the Github repository: <a href=https://github.com/ru14/Tech-Blog>Github</a>
 
