@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { blog, User, Comment } = require('../../models');
+const { Blog, User, Comment } = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 //get all blogs
 router.get('/', async (req, res) => {
-  blog.findAll({
+  Blog.findAll({
     attributes: [
       'id',
       
@@ -45,7 +45,7 @@ router.get('/', async (req, res) => {
   // res.render('blog',{ blogs: blogs });// username of handlebar view
 });
 router.get('/:id', async (req, res) => {
-  blog.findOne({
+  Blog.findOne({
     where: {
       id: req.params.id
     },
@@ -86,7 +86,7 @@ router.get('/:id', async (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
-  Post.update({
+  Blog.update({
     blog_header: req.body.blog_header,
     description: req.body.description,
   }, {
@@ -108,11 +108,11 @@ router.put('/:id', withAuth, (req, res) => {
 
 
 
-router.post('/:id', withAuth, (req, res) => {
-  Post.create({
+router.post('/', withAuth, (req, res) => {
+  Blog.create({
    
-    blog_header: req.body.title,
-    description: req.body.content,
+    blog_header: req.body.blog_header,
+    description: req.body.description,
     user_id: req.session.user_id
   }).then(dbblogData => {
     if (!dbblogData) {
@@ -130,7 +130,7 @@ router.post('/:id', withAuth, (req, res) => {
 
 
 router.delete('/:id', withAuth, (req, res) => {
-  Post.destroy({
+  Blog.destroy({
     where: {
       id: req.params.id
     }

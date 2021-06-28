@@ -2,7 +2,10 @@ async function commentFormHandler(event) {
     event.preventDefault();
   
     const comment_text = document.querySelector('input[name="comment-body"]').value.trim();
-    const blog_id = document.querySelector('#comment-form').getAttribute('data-blog_id');
+    let blog_id = document.querySelector('#comment-form').getAttribute('data-blog');
+    console.log(blog_id)
+    blog_id = parseInt(blog_id)
+    
     console.log(comment_text)
     
   
