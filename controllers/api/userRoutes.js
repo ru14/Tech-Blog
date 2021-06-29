@@ -64,7 +64,7 @@ router.get('/:id', (req, res) => {
 
 
 router.post('/', async (req, res) => {
-  console.log(req.body);
+  //console.log(req.body);
   try {
     const userData = await User.create(req.body);
 
@@ -80,8 +80,8 @@ router.post('/', async (req, res) => {
   }
 });
 router.post('/login', async (req, res) => {
-  console.log("DEBUG: Call to login route");  
-console.log(req.body)
+  //console.log("DEBUG: Call to login route");  
+//console.log(req.body)
   User.findOne({
     where: {
       username: req.body.username
@@ -111,7 +111,7 @@ console.log(req.body)
 
   })
   .catch (err => {
-    console.log("DEBUG: Final error. " + err);
+    //console.log("DEBUG: Final error. " + err);
     res.status(400).json(err);
   })
 });

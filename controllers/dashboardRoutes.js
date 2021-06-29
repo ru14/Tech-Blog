@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Blog, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
-console.log("hit the page",Blog);
+//console.log("hit the page",Blog);
 
 
 //all of post with user logged in
@@ -10,7 +10,7 @@ console.log("hit the page",Blog);
 
 
 router.get('/', async (req, res) => {
-    console.log(req.session)
+    //console.log(req.session)
     Blog.findAll({
         where: {
             user_id: req.session.user_id
