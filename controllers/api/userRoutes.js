@@ -62,57 +62,58 @@ router.get('/:id', (req, res) => {
 
 
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
+  console.log(req.body);
+  try {
+    const userData = await User.create(req.body);
 
-  User.create({
-      username: req.body.username,
-      password: req.body.password
-  })
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.username = userData.username;
+      req.session.logged_in = true;
 
-  .then(dbUserData => {
-          req.session.save(() => {
-              req.session.user_id = dbUserData.id;
-              req.session.username = dbUserData.username;
-              req.session.loggedIn = true;
-
-              res.json(dbUserData);
-          });
-      })
-      .catch(err => {
-          console.log(err);
-          res.status(500).json(err);
-      });
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
+  console.log("DEBUG: Call to login route");  
+console.log(req.body)
   User.findOne({
-          where: {
-              username: req.body.username
-          }
-      }).then(dbUserData => {
-          if (!dbUserData) {
-              res.status(400).json({ message: 'No user with that username!' });
-              return;
-          }
-          const validPassword = dbUserData.checkPassword(req.body.password);
+    where: {
+      username: req.body.username
+    }
+  }).then(dbUserData => {
+    if (!dbUserData) {
+      res.status(400).json({ message: 'No user with that name!' });
+      return;
+    }
 
-          if (!validPassword) {
-              res.status(400).json({ message: 'Incorrect password!' });
-              return;
-          }
-          req.session.save(() => {
+    const validPassword =  dbUserData.checkPassword(req.body.password);
 
-              req.session.user_id = dbUserData.id;
-              req.session.username = dbUserData.username;
-              req.session.loggedIn = true;
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
 
-              res.json({ user: dbUserData, message: 'You are now logged in!' });
-          });
-      })
-      .catch(err => {
-          console.log(err);
-          res.status(500).json(err);
-      });
-})
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+
+      res.json({ user:dbUserData, message: 'You are now logged in!' });
+    });
+
+  })
+  .catch (err => {
+    console.log("DEBUG: Final error. " + err);
+    res.status(400).json(err);
+  })
+});
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
