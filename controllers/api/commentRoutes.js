@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
-        console.log("hit silly route",req.body)
+        //console.log("hit silly route",req.body)
         Comment.create({
                 comment_text: req.body.comment_text,
                 blog_id: req.body.blog_id,
